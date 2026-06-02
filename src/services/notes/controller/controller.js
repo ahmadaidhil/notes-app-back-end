@@ -4,7 +4,7 @@ import { InvariantError, NotFoundError } from '../../../exceptions/index.js';
 import response from '../../../utils/response.js';
 
 export const createNote = (req, res, next) => {
-  const { title = 'untitled', tags, body } = req.body;
+  const { title, tags, body } = req.validated;
   const id = nanoid(16);
   const createdAt = new Date().toISOString();
   const updatedAt = createdAt;
@@ -41,7 +41,7 @@ export const getNoteById = (req, res, next) => {
 
 export const editNoteById = (req, res, next) => {
   const { id } = req.params;
-  const { title, tags, body } = req.body;
+  const { title, tags, body } = req.validated;
   const updatedAt = new Date().toISOString();
   const index = notes.findIndex((n) => n.id === id);
  
