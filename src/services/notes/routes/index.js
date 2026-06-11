@@ -1,5 +1,5 @@
 import express from 'express';
-import { createNote, getNotes, getNoteById, editNoteById, deleteNoteById } from '../controller/controller.js';
+import { createNote, getNotes, getNoteById, editNoteById, deleteNoteById } from '../controller/note-controlle.js';
 import validate from '../../../middlewares/validate.js';
 import { notePayloadSchema } from '../../../services/notes/validator/schema.js';
  
